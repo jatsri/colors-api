@@ -74,6 +74,16 @@ const createEndpoints = ({ app, query, getConnection }) => {
             res.status(201).send("Colors added");
         });
     }));
+
+    app.delete('/colors/:id', asyncHandler(async (req, res) => {
+        const params = req.params;
+
+        const result = await query(`DELETE FROM colors_hex where id = $1`, [ params.id ]);
+
+        if (result.rowCount === 1) {
+            res.status(204).send('Deleted');
+        }
+    }))
 }
 
 module.exports = createEndpoints;
