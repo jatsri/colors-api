@@ -3,14 +3,15 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const createEndpoints = require('./src/createEndpoints');
-const { query } = require('./src/db/query');
+const { query, getConnection } = require('./src/db/query');
 
 const app = express();
 app.use(bodyParser.json({ type: 'application/json' }));
 
 createEndpoints({
     app,
-    query
+    query,
+    getConnection
 });
 
 app.listen(process.env.PORT, () => {
