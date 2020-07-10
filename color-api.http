@@ -1,0 +1,41 @@
+POST http://localhost:3000/colors
+Content-Type: application/json
+
+{
+  "items": [
+    {
+      "color": "INDIANRED",
+      "hex": "#CD5C5C"
+    },
+    {
+      "color": "SALMON",
+      "hex": "#FA8072"
+    },
+    {
+      "color": "CRIMSON",
+      "hex": "#DC143C"
+    },
+    {
+      "color": "DARKRED",
+      "hex": "#8B0000"
+    },
+    {
+      "color": "HOTPINK",
+      "hex": "#FF69B4"
+    }
+  ]
+}
+
+###
+GET http://localhost:3000/colors
+Accept: application/json
+
+###
+DELETE http://localhost:3000/colors/4
+Accept: application/json
+
+{
+  "color": "Deeplink",
+  "hex": "#FF1493"
+  "item"
+}
