@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev:db": "docker run -p 5432:5432 --rm -e POSTGRES_PASSWORD=secret -e COLORS_USER=nsrivaradhan -e COLORS_PASSWORD=passw0rd! -e COLORS_DATABASE=colors  $(docker build -q ./database)",
     "dev": "nodemon index.js"
   },
   "repository": {
