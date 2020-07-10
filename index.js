@@ -1,12 +1,14 @@
 require('dotenv').config();
 const express = require('express');
 
-const createEndpoints = require('./createEndpoints');
+const createEndpoints = require('./src/createEndpoints');
+const { query } = require('./src/db/query');
 
 const app = express();
 
 createEndpoints({
-    app
+    app,
+    query
 });
 
 app.listen(process.env.PORT, () => {
