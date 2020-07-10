@@ -11,7 +11,14 @@ const createEndpoints = ({ app, query }) => {
         const result = await query(`SELECT * FROM colors_hex`);
 
         res.json({ items: result.rows})
-    }))
+    }));
+
+    app.post('/colors', asyncHandler(async (req, res) => {
+        const body = req.body;
+        console.log('From the post request', body);
+
+        res.send("Colors added");
+    }));
 }
 
 module.exports = createEndpoints;
