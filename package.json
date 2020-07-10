@@ -1,0 +1,22 @@
+{
+  "name": "colors-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jatsri/colors-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jatsri/colors-api/issues"
+  },
+  "homepage": "https://github.com/jatsri/colors-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
