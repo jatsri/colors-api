@@ -70,9 +70,16 @@ const createEndpoints = ({ app, query, getConnection }) => {
 
         });
 
-        insertColors.then(() => {
-            res.status(201).send("Colors added");
-        });
+        insertColors
+            .then(() => {
+                res.status(201).send();
+            })
+            .catch((err) => {
+                const UNIQUE_CONSTRAINT_VIOLATION_CODE = '23505';
+                if(err.code === UNIQUE_CONSTRAINT_VIOLATION_CODE) {
+                    res.status(409).send();
+                }
+            })
     }));
 
     app.delete('/colors/:id', asyncHandler(async (req, res) => {
