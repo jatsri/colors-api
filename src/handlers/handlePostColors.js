@@ -3,7 +3,6 @@ const { Readable } = require('stream');
 
 module.exports = async ({ getConnection }, req, res) => {
     const body = req.body;
-    console.log('From the post request', body);
 
     const client = await getConnection();
     const done = () => {
