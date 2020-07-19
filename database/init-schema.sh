@@ -29,7 +29,7 @@ init_user_and_db() {
     CREATE TABLE colors_hex (
       id integer PRIMARY KEY DEFAULT nextval('colors_id_seq'),
       color VARCHAR(1024) NOT NULL,
-      hex VARCHAR(1024) NOT NULL
+      hex VARCHAR(1024) NOT NULL UNIQUE
     );
 
     CREATE INDEX ON colors_hex (id ASC);
